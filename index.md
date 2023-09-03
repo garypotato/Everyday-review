@@ -26,3 +26,6 @@
         - test it at 'npx serve dist'
       - netlify:
         - drag the 'dist' file in
+    - nginx server:
+      - install nginx in the Linux(for example)
+      - copy all the files under `dist` and paste to `var/ww/html` in `nginx`
