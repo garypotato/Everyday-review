@@ -29,3 +29,10 @@
     - nginx server:
       - install nginx in the Linux(for example)
       - copy all the files under `dist` and paste to `var/ww/html` in `nginx`
+- Tailwind:
+  - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+- strapi:
+  - headless CMS
+  - run it locally
+  - provide UI for collection creation, etc
+  - automatically generate REST APIs for data querying
