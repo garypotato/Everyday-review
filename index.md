@@ -1,0 +1,28 @@
+# 03/09/2023:
+
+- JavaScript
+  - understand the regx: /-\$?\d+(\.\d+)?/g;
+  - closure:
+    - a function (b) return by another function (a)
+    - function b will have a closure that includes all the variables when function b is created
+  - this:
+    - refers to the last object
+- Next.js
+  - pre-rending:
+    - make app render faster
+    - SEO
+  - different types of pages:
+    - `Static`: automatically rendered as static HTML
+    - `SSG`: automatically rendered as a static HTML + JSON
+    - `ISR`: incremental static regeneration
+  - client component: **Hydration**
+    - static HTML will be render from sever
+    - the browser display the HTML from server, and also load the JS files and make the element can be interactive
+  - deployment:
+    - vercel: deploy same with AWS Amplify
+    - Netlify:
+      - local:
+        - 'npx run build' & 'npx next export -o dist'
+        - test it at 'npx serve dist'
+      - netlify:
+        - drag the 'dist' file in
