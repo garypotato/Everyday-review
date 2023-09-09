@@ -87,3 +87,15 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
   - environment variables
     - `.env` for production
     - `.env.local` for local, will overwrite `.env` when run in local
+
+# 06/09/2023
+
+- Product Fruits
+  - similar with 'chat now', manage user feedback
+- daily development
+  - always remember to handle `fetch error` and `undefined`
+- delete `cookie`
+  - set an empty cookie with expired time(previous time)
+- `React Query`
+  - use the combination of the `cache` and `staleTime` sometime doesn't need `Redux`
+  - `queryClient.setQueryData()` to force cache update
