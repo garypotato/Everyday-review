@@ -99,3 +99,29 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
 - `React Query`
   - use the combination of the `cache` and `staleTime` sometime doesn't need `Redux`
   - `queryClient.setQueryData()` to force cache update
+
+# 09/09/2023
+
+- Next.js
+  - `app router` vs `page router`
+    - `app router` includes `server component` and `client component`
+    - `server component` only runs in server, means no extra JS code send to browser; only can user server side functionality
+    - `client component` pre-render in server and re-render in the browser for client functionality
+    - `page router` always run twice, first `server` then `browser`
+  - `<Link>`
+    - by default, the next.js app is multi-page app
+    - every time the route change, it will render a new page
+    - `<Link>` make the app similar to `SPA` and use the client side navigation
+  - `pre-fetching`:
+    - happened in `production mode`
+    - pre-fetches all links after right after loading the initial page
+    - disabled: add `prefetch={false}` to `<Link>`
+  - `Google font`
+    - `next.js` will automatically download the font files as static asset when `build`, that web page doesn't need to send request to Google for fonts
+  - `dangerouslySetInnerHTML`
+    - can display html code directly
+    - think carefully before use: if insert the html code entered by user, that user can add `<script />` tag and run js code.
+  - `markdown`
+    - npm `marked`: read the `markdown` file
+    - npm `Tailwind CSS Typography`: insert the html to `<article/>` with format
+    - npm `gray-matter`: allow `markdown` attach addition information
