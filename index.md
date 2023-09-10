@@ -125,3 +125,34 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
     - npm `marked`: read the `markdown` file
     - npm `Tailwind CSS Typography`: insert the html to `<article/>` with format
     - npm `gray-matter`: allow `markdown` attach addition information
+
+# 10/09/2023
+
+- Next.js
+  - `dynamic routes`
+    - by default, it's `server-side renders` at runtime, it's **no static page**
+      - if re-render the dynamic page, the server will re-generate the HTML and sent to the browser
+      - downside: **slower** than static page
+    - how to fix？`generateStaticParams()`
+      - when **build**, `slug` shows `SSG`
+  - `Metadata`
+    - for example: `title`
+      - suggest to add in `layout.js`
+      - `title template`
+    - `dynamic metedata`
+      - `generateMetadata()`
+  - `icon`
+    - Add a favicon.ico image file to the root /app route segment. **Next.js** will handle for u
+  - `client component`
+    - `Hydration`
+    - when the **nest component** is `client component`, the parent component doesn't need to specific **client component**
+    - only specific **client component** when necessary
+  - `heroicons`
+    - same team with `Tailwind`
+  - `Headless CMS`:
+    - what's that?: focus on **data management** and **provide APIs**
+    - vs `traditional CMS`:
+      - **traditional CMS** manage and present the data are attached to each other
+      - **Headless CMS** doesn't care the UI and how to present data
+    - vs `backend server`
+      - **server** also need to care the logic of a project, eg. authorisation and authentication
