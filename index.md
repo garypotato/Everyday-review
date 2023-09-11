@@ -156,3 +156,27 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
       - **Headless CMS** doesn't care the UI and how to present data
     - vs `backend server`
       - **server** also need to care the logic of a project, eg. authorisation and authentication
+
+# 11/09/2023
+
+- Strapi
+  - **populate and select**: it has something similar to `GraphQL`, can request the fields u need
+- Next.j
+  - `<Image/>`
+  - `Route Segment Config`
+    - `dynamicParams`: if `generateStaticParams()` presents, set `dynamicParas` to false will disable the unknown dynamic route
+    - `dynamic`
+      - `force-dynamic`
+        - always fetching the latest updates
+        - dirty and quick
+        - force every page re-rend in run time
+  - Background revalidation
+  - fetch api
+    - set **cache** to no store will have similar behavior with `force-dynamic`
+    - set **revalidate** will have the similar behavior with `background revalidation`
+  - next/navigation
+    - redirect to `404`
+    - `notFound()`
+    - or create not found page under `/app`
+  - on-demand revalidation
+    - webhook
