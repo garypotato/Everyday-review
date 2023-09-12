@@ -180,3 +180,33 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
     - or create not found page under `/app`
   - on-demand revalidation
     - webhook
+
+# 12/09/2023
+
+- Next.js
+  - `searchParams` is dynamic API, will opt the page into **dynamic rendering**
+    - example: `/reviews?page=2`
+  - third party npm:
+    - it will always have issue that a same component from the server is different from the browser
+      - e.g. text (id) different
+  - pass data from `server component` to `client component`
+    - fetch the data in the build time will increase the size the pages (sever component), especially when the data will grow
+    - only suggest when there is a fixed amount of data,
+  - handler: create handler not to expose the api to public
+    - act like a proxy
+  - fetch (next.js)
+    - can be happen both in client and server
+    - `server-only npm` can limit the fetch usage in **server** only
+  - env
+    - different name of environment variable in **server** and **client**
+    - `next.config.js` can also read the env
+- JavaScript
+  - `encodeURIComponent` before formatting the url
+  - `new URL()`
+  - `AbortController` cancel request
+  - `debounce`: **use-debounce npm**
+- React
+  - `useEffect`: react will first call the cleanup function returned by the previous `userEffect` invocation, so any previous fetch request will be cancelled.
+  - can **redirect** the url before the react app mount to the html, that means
+    - before the **Redux** initialized
+    - before hitting the **react-router**
