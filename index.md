@@ -105,7 +105,7 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
 - Next.js
   - `app router` vs `page router`
     - `app router` includes `server component` and `client component`
-    - `server component` only runs in server, means no extra JS code send to browser; only can user server side functionality
+    - `server component` only runs in server, means no extra JS code send to browser; only can use server side functionality
     - `client component` pre-render in server and re-render in the browser for client functionality
     - `page router` always run twice, first `server` then `browser`
   - `<Link>`
@@ -114,7 +114,7 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
     - `<Link>` make the app similar to `SPA` and use the client side navigation
   - `pre-fetching`:
     - happened in `production mode`
-    - pre-fetches all links after right after loading the initial page
+    - pre-fetches all links right after loading the initial page
     - disabled: add `prefetch={false}` to `<Link>`
   - `Google font`
     - `next.js` will automatically download the font files as static asset when `build`, that web page doesn't need to send request to Google for fonts
@@ -130,7 +130,7 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
 
 - Next.js
   - `dynamic routes`
-    - by default, it's `server-side renders` at runtime, it's **no static page**
+    - by default, it's **server-side renders** at runtime, it's **no static page**
       - if re-render the dynamic page, the server will re-generate the HTML and sent to the browser
       - downside: **slower** than static page
     - how to fix？`generateStaticParams()`
@@ -145,7 +145,7 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
     - Add a favicon.ico image file to the root /app route segment. **Next.js** will handle for u
   - `client component`
     - `Hydration`
-    - when the **nest component** is `client component`, the parent component doesn't need to specific **client component**
+    - when the **next component** is `client component`, the parent component doesn't need to specific **client component**
     - only specific **client component** when necessary
   - `heroicons`
     - same team with `Tailwind`
@@ -210,3 +210,16 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
   - can **redirect** the url before the react app mount to the html, that means
     - before the **Redux** initialized
     - before hitting the **react-router**
+
+# 13/09/2023
+
+- MSSQL & hasura
+  - upsert data in hasura, **if match** can't includes the columns that defined as `test`
+
+# 17/09/2023
+
+- `pm2`
+  - built-in load balancer
+  - keep running applications alive indefinitely
+  - using `pm2` inside `docker`:
+    - not necessary
