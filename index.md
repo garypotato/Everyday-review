@@ -223,3 +223,21 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
   - keep running applications alive indefinitely
   - using `pm2` inside `docker`:
     - not necessary
+
+# 19/09/2023
+
+- hasura
+  - remember the hasura geometry query, e.g. `_st_within`
+- Docker
+  - CMD: will eacute when a container starts
+  - attached vs detached
+    - attached: keep listing to the port
+      - coerk attach CONTAINER to attach a running container
+  - docker log to check console.log
+  - interactive mode
+    - `-it`
+  - docker run --rm: automatically remove a stopped container
+  - docker inspect CONTAINER
+  - docker cp sourcePath desPath
+    - copy/export files to/from container
+    - use case will be copy logs from container
