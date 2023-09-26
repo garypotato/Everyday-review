@@ -241,3 +241,16 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
   - docker cp sourcePath desPath
     - copy/export files to/from container
     - use case will be copy logs from container
+
+# 23/09/2023
+
+- MSSQL
+  - index: when create index, need to consider the nullable column and should nullable be included in the index.
+
+# 26/09/2023
+
+- MongoDB
+  - display in `json` but store in `bson`
+  - MongoDB shell
+    - can be used as `JS`
+    - **Network Access** to control which IP address can access the data
