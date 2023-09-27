@@ -254,3 +254,14 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
   - MongoDB shell
     - can be used as `JS`
     - **Network Access** to control which IP address can access the data
+
+# 27/09/2023
+
+- MongoDB
+  - `$eq`: db.zips.find({city:{$eq:"CHICAGO"}})
+  - `$in`: db.zips.find({city:{$in:["PHOENIX","CHICAGO"]}})
+  - `$gt`/`$lt`: db.sales.find({"items.price":{$gt: 50}})
+  - `$elemMatch`: find documents with an **Array** that contains a specified value
+  - db.books.find({ genre: "Historical" })
+    - this query will return documents where the genre field is equal to a scalar value of Historical, and it will also return documents that have an array with a value equal to Historical, such as ["Historical", "Fiction"].
+  - `$and` / `$or`
