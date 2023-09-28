@@ -265,3 +265,10 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
   - db.books.find({ genre: "Historical" })
     - this query will return documents where the genre field is equal to a scalar value of Historical, and it will also return documents that have an array with a value equal to Historical, such as ["Historical", "Fiction"].
   - `$and` / `$or`
+
+# 28/09/2023
+
+- dev:
+  - error `aiagain`: DNS not stable
+- docker version
+  - when run `geoServer` in container, 'setClassPath.sh' couldn't find
