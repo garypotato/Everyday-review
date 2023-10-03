@@ -272,3 +272,26 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
   - error `aiagain`: DNS not stable
 - docker version
   - when run `geoServer` in container, 'setClassPath.sh' couldn't find
+
+# 03/10/2023
+
+- Next.js
+  - `AppService`:
+    - inject to `AppModule`;
+    - inject to `AppController`
+      - `export class AppController{ @Inject(AppServer) private readonly appService: AppService}`
+  - injection:
+    - `useCalss`
+    - `useValue`: inject an object
+    - global injection
+  - life cycle (support `async`):
+    - controller/provider `onModulInit`, then module
+    - controller/provider `onApplicationBootstrap`, then module
+    - controller/provider `onModuleDestroy`, then module
+    - controller/provider `onApplicationShutdown  `, then module
+  - AOP: Aspect Oriented Programming
+    - middleware
+    - guard
+    - interceptor
+    - pipe
+    - exceptionFilter
