@@ -295,3 +295,89 @@ AllPropertyView_PropertyLotStrata: {eacPropkey:{\_in:[98765543,9876543]}}
     - interceptor
     - pipe
     - exceptionFilter
+
+# 06/10/2/23
+
+- dev:
+  - always be careful with `error handling` because node.js will crash if **unhandled** error happens
+  - node.js is a single thread
+
+# 08/10/2023
+
+- Next.js decorator
+  - @Module： 声明 Nest 模块
+  - @Controller：声明模块里的 controller
+  - @Injectable：声明模块里可以注入的 provider
+  - @Inject：通过 token 手动指定注入的 provider，token 可以是 class 或者 string
+  - @Optional：声明注入的 provider 是可选的，可以为空
+  - @Global：声明全局模块
+  - @Catch：声明 exception filter 处理的 exception 类型
+  - @UseFilters：路由级别使用 exception filter
+  - @UsePipes：路由级别使用 pipe
+  - @UseInterceptors：路由级别使用 interceptor
+  - @SetMetadata：在 class 或者 handler 上添加 metadata
+  - @Get、@Post、@Put、@Delete、@Patch、@Options、@Head：声明 get、post、put、delete、patch、options、head 的请求方式
+  - @Param：取出 url 中的参数，比如 /aaa/:id 中的 id
+  - @Query: 取出 query 部分的参数，比如 /aaa?name=xx 中的 name
+  - @Body：取出请求 body，通过 dto class 来接收
+  - @Headers：取出某个或全部请求头
+  - @Session：取出 session 对象，需要启用 express- session 中间件
+  - @HostParm： 取出 host 里的参数
+  - @Req、@Request：注入 request 对象
+  - @Res、@Response：注入 response 对象，一旦注入了这个 Nest 就不会把返回值作为响应了，除非指定 passthrough 为 true
+  - @Next：注入调用下一个 handler 的 next 方法
+  - @HttpCode： 修改响应的状态码
+  - @Header：修改响应头
+  - @Redirect：指定重定向的 url
+  - @Render：指定渲染用的模版引擎
+- `ExecutionContext`:
+  - `ArgumentHost`: `getArgs`/`getArgByIndex` to get `request`, `response` and `next`
+  - `ExecutionContext`: base on `ArgumentHost`, there are two extra functions. These functions can be used with `reflector` to the `metadata`
+    - `getClass`
+    - `getHandler`
+- custom decorator
+  - `@SetMetadata`
+  - `createParamDecorator`
+  - `applyDecorators`
+  - type of decorator
+    - function decorator
+    - class decorator
+- `Metadata` && `Reflector`
+  - `metadata` is information that can be associated with an object or property
+  - Controller,Module,Service and other decorators use `Reflect.metadata` to add meta into _class_ or _object_. When they are initialized, use it in the class instance
+- circular dependency between modules
+  - module a import module b, module b import module a
+  - solution: `forwardRef`
+  - theory: initialize _Module_ and _Provider_, then inject to each other
+- Dynamic Module:
+
+# 09/10/2023
+
+- node level:
+  - use http, https module
+  - use Express, koa
+  - use Nest.js
+- nest.js adaptor
+  - express
+  - fastify
+- nest.js `middleware`
+  - can use `services`
+  - different from `interceptor`
+    - _interceptor_ have `ExecutionContext` and use `rxjs`
+- nest.js `interceptor` and `RxJS`
+  - tap
+  - map
+  - catchError
+  - timeout
+- nest.js `pipe`: most of time in date validation
+- nest.js `ValidationPipe`:
+  - dto: data transfer object
+  - `class-validator` && `class-transformer`
+
+# 10/10/2023
+
+- nest.js `Exception Filter`
+  - @Catch to catch exception, can catch whatever exception you needed
+  - custom exception filter
+- express upload file
+  - multer
